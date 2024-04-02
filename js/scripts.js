@@ -23,7 +23,15 @@ $(document).ready(function() {
 
     // Make list items sortable
     $('#list').sortable();
-
-    // Example of creating and appending a new <li> element to a list with the class "selectedElement"
-    $('.selectedElement').append('<li>some item</li>');
 });
+
+// Define the newItem function
+function newItem() {
+    var deleteButton = $('<button></button>').addClass('delete').text('X');
+    var newItemValue = $('input[name="ListItem"]').val();
+    if (newItemValue !== '') {
+        var newItem = $('<li></li>').text(newItemValue).append(deleteButton);
+        $('#list').append(newItem);
+        $('input[name="ListItem"]').val('');
+    }
+}
