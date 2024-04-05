@@ -17,7 +17,7 @@ function newItem() {
   // Event listener for marking an item off the list
   listItem.on("dblclick", crossOut);
 
-  let crossOutButton = $("<crossOutButton></crossOutButton>");
+  let crossOutButton = $("<button></button>");
   crossOutButton.text("X");
   listItem.append(crossOutButton);
 
